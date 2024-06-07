@@ -53,7 +53,7 @@ public class Person {
 	@ToString.Exclude
 	private CustomerAsPerson customerAsPerson;
 	
-	public Person(String name, String surname, String personCode) {
+	public Person(String name, String personCode, String surname) {
 		setName(name);
 		setSurname(surname);
 		setPersonCode(personCode);
