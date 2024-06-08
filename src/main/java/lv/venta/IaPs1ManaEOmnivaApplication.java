@@ -29,7 +29,7 @@ public class IaPs1ManaEOmnivaApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(IaPs1ManaEOmnivaApplication.class, args);
 	}
-
+/*
 	@Bean
 	public CommandLineRunner testDB(
 			IAddressRepo addressRepo, 
@@ -139,7 +139,7 @@ public class IaPs1ManaEOmnivaApplication {
 			}
 			
 		};
-		
-	}
 	
+	}
+*/		
 }

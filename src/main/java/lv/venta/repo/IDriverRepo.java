@@ -6,4 +6,8 @@ import lv.venta.model.Driver;
 
 public interface IDriverRepo extends CrudRepository<Driver, Integer> {
 
+	Driver findByNameAndSurnameAndPersonCode(String name, String surname, String personCode);
+
+	Driver findByIdd(int id);
+
 }
