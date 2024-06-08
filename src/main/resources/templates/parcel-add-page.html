@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+	<p>Insert parcel data</p>
+
+	<form th:action="@{/parcel/add/__${customercode}__/__${driverid}__}" method="post" th:object="${parcel}">
+		
+		<table>
+			<!--
+				
+				i dont know why isFragile causes err
+				
+			<tr>
+				<td>Is fragile</td>
+				<td><input type="text" th:field="*{isFragile}"/></td>
+				<td th:if="${#fields.hasErrors('isFragile')}" th:errors="*{isFragile}"></td>
+			</tr>
+			-->
+			<tr>
+			    <td>Order Created</td>
+			    <td><input type="datetime-local" th:field="*{orderCreated}"/></td>
+			    <td th:if="${#fields.hasErrors('orderCreated')}" th:errors="*{orderCreated}"></td>
+			</tr>
+			
+			<tr>
+			    <td>Order Delivery</td>
+			    <td><input type="datetime-local" th:field="*{orderDelivery}"/></td>
+			    <td th:if="${#fields.hasErrors('orderDelivery')}" th:errors="*{orderDelivery}"></td>
+			</tr>
+			<tr>
+				<td>Price</td>
+				<td><input type="text" th:field="*{price}"/></td>
+				<td th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></td>
+			</tr>
+			<tr>
+			    <td>Size</td>
+			    <td><input type="text" th:field="*{size}"/></td>
+			    <td th:if="${#fields.hasErrors('size')}" th:errors="*{size}"></td>
+			</tr>  					
+		</table>
+		
+		<button type="submit">Save</button>
+		
+	</form>
+
+</body>
+</html>
