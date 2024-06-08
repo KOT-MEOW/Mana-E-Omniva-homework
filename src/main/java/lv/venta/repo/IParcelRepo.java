@@ -2,6 +2,7 @@ package lv.venta.repo;
 
 import java.util.ArrayList;
 
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
 import lv.venta.model.City;
@@ -17,8 +18,10 @@ public interface IParcelRepo extends CrudRepository<Parcel, Integer> {
 
 	ArrayList<Parcel> findByAbstractCustomerAddressCity(City city);
 
-	float calculateIncomeCustomerById(int id);
+	@Query(nativeQuery = true, value = "SELECT sum(price) FROM parcel WHERE idac=(?1);")
+	float calculateIncomeCustomerById(int idac);
 
-	int countOfDeliveryForToday(String deliverDate);
-
+	@Query(nativeQuery = true, value = "SELECT count(idpa) from parcel where order_delivery like (?1);")
+	int countOfDeliveryForToday(String sintax);
+	
 }
